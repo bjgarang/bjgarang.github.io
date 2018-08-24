@@ -433,9 +433,10 @@
                 <h2 id="_1">字符串基本操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>所有标准的序列操作（索引、分片、乘法、判断成员资格、求长度、取最小值和最大值）对字符串同样适用。但是字符串是不可变的，因此对字符串进行分片赋值等操作是不合法的。</p>
 <h2 id="_2">字符串格式化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<pre><code class="python">&gt;&gt;&gt;'%s plus %s equals %s' % (1,1,2)
-'1 plus 1 equals 2'
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> plus </span><span class="si">%s</span><span class="s1"> equals </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="s1">&#39;1 plus 1 equals 2&#39;</span>
+</pre></div>
+
 
 <h3 id="_3">基本转换说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
@@ -452,10 +453,11 @@
 <p><strong>点<code>.</code>后跟精度值</strong>（可选）：如果转换的是实数，精度值就表示出现在小数点后的位数。如果转换的是字符串，那么该数字就表示最大字段宽度。如果是<code>*</code>，那么精度将会从元组中读出。  </p>
 </li>
 </ul>
-<pre><code class="python">&gt;&gt;&gt; from math import pi
-&gt;&gt;&gt; &quot;Pi with three decimals: %.3f&quot; % pi'
-Pi with three decimals: 3.142'  
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;Pi with three decimals: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="s1">&#39;</span>
+<span class="n">Pi</span> <span class="k">with</span> <span class="n">three</span> <span class="n">decimals</span><span class="p">:</span> <span class="mf">3.142</span><span class="s1">&#39;  </span>
+</pre></div>
+
 
 <ul>
 <li><strong>转换类型：</strong>参见下表</li>

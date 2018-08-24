@@ -627,14 +627,16 @@
 <li>%  取余：每隔10分钟，可以检查时间%/10的结果是否为0</li>
 <li>幂（乘方）：**</li>
 </ul>
-<pre><code>&gt;&gt;&gt; 2**3=8
-</code></pre>
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; 2**3=8
+</pre></div>
+
 
 <h3 id="_4">长整数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>数字结尾加L表示长整数</p>
-<pre><code>&gt;&gt;&gt;100000000000000000000000
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt;100000000000000000000000
 100000000000000000000000L
-</code></pre>
+</pre></div>
+
 
 <p>普通整数不能大于2147483647（也不能小于-2147483648），长整数和普通整数可以混合使用</p>
 <h3 id="_5">变量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -644,49 +646,54 @@
 <h3 id="if">if语句<a class="headerlink" href="#if" title="Permanent link">&para;</a></h3>
 <p>在交互式解释器中使用if语句，需要按两次回车</p>
 <h3 id="pow">用函数pow代替**做乘方运算<a class="headerlink" href="#pow" title="Permanent link">&para;</a></h3>
-<pre><code>&gt;&gt;&gt;2**3
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt;2**3
 8
 &gt;&gt;&gt;pow(2,3)
 8
-</code></pre>
+</pre></div>
 
-<pre><code>abs函数取绝对值
-&gt;&gt;&gt;abs(-10)
-10
 
-round函数四舍五入
-&gt;&gt;&gt;round(1.0/2.0)
-1.0
+<div class="codehilite"><pre><span></span><span class="nb">abs</span><span class="err">函数取绝对值</span>
+<span class="o">&gt;&gt;&gt;</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">10</span>
 
-math.floor函数向下取整，32.9岁向下取整为32岁
-&gt;&gt;&gt;import math
-&gt;&gt;&gt;math.floor(32.9)
-32.0
-&gt;&gt;&gt;int(math.floor(32.9))
-32
-</code></pre>
+<span class="nb">round</span><span class="err">函数四舍五入</span>
+<span class="o">&gt;&gt;&gt;</span><span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="mf">1.0</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="err">函数向下取整，</span><span class="mf">32.9</span><span class="err">岁向下取整为</span><span class="mi">32</span><span class="err">岁</span>
+<span class="o">&gt;&gt;&gt;</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">32.9</span><span class="p">)</span>
+<span class="mf">32.0</span>
+<span class="o">&gt;&gt;&gt;</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">32.9</span><span class="p">))</span>
+<span class="mi">32</span>
+</pre></div>
+
 
 <h3 id="ceil">ceil函数<a class="headerlink" href="#ceil" title="Permanent link">&para;</a></h3>
 <p>与floor函数相对的函数是ceil（向上取整），32.1岁向上取整为33岁</p>
 <h3 id="_7">使用变量引用函数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>可以使用变量来引用函数（或者python中大多数的对象），比如通过wqy=math.sqrt进行赋值，然后wqy(4)的结果为2.0</p>
-<pre><code>&gt;&gt;&gt; import math
-&gt;&gt;&gt; wqy=math.sqrt
-&gt;&gt;&gt; wqy(4)
-2.0
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">wqy</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">wqy</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="mf">2.0</span>
+</pre></div>
+
 
 <h3 id="_8">虚数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>虚数均以j（或者J）结尾</p>
-<pre><code>&gt;&gt;&gt; import cmath
-&gt;&gt;&gt; cmath.sqrt(-1)
-1j
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">cmath</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">1j</span>
+</pre></div>
+
 
 <h3 id="_9">用+拼接字符串<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<pre><code>&gt;&gt;&gt; &quot;hello,&quot; + &quot;world!&quot;
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; &quot;hello,&quot; + &quot;world!&quot;
 ‘hello,world!’
-</code></pre>
+</pre></div>
+
 
 <h3 id="_10">字符串转换<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>str、repr、和反引号是讲python值转换为字符串的3中方法。函数str让字符串更易于阅读，而repr(和反引号)则将结果字符串转换为合法的pyt</p>
@@ -700,13 +707,14 @@ math.floor函数向下取整，32.9岁向下取整为32岁
 <p>如果需要写一个非常长的字符串，它需要跨多行，可以使用三个引号代替普通引号。</p>
 <h3 id="_13">原始字符串：<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>原始字符串以r开头，在原始字符串中可以放入任何字符</p>
-<pre><code>&gt;&gt;&gt; print'hello,\nworld!'
+<div class="codehilite"><pre><span></span>&gt;&gt;&gt; print&#39;hello,\nworld!&#39;
 hello,
 world
 
-&gt;&gt;&gt; print r'hello,\nworld!'
+&gt;&gt;&gt; print r&#39;hello,\nworld!&#39;
 hello,\nworld!
-</code></pre>
+</pre></div>
+
 
 <blockquote>
 <p>原始字符串的最后一个字符不能是反斜线</p>
