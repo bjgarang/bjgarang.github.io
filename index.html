@@ -731,35 +731,48 @@ will break</p>
 </li>
 </ul>
 <p>Here is the code:</p>
-<div class="codehilite"><pre><span></span>* This two-line bullet 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* This two-line bullet 
 won&#39;t break
 
 * This two-line bullet  
 will break
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="strong-and-emphasize">Strong and Emphasize<a class="headerlink" href="#strong-and-emphasize" title="Permanent link">&para;</a></h3>
 <p><strong>Strong</strong>: <code>**Strong**</code> or <code>__Strong__</code> (Command-B)<br />
 <em>Emphasize</em>: <code>*Emphasize*</code> or <code>_Emphasize_</code>[^emphasize] (Command-I)</p>
 <h3 id="headers-like-this-one">Headers (like this one!)<a class="headerlink" href="#headers-like-this-one" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="gh">Header 1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gh">Header 1</span>
 <span class="gh">========</span>
 
 <span class="gh">Header 2</span>
 <span class="gh">--------</span>
 </pre></div>
-
+</td></tr></table>
 
 <p>or</p>
-<div class="codehilite"><pre><span></span># Header 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Header 1
 ## Header 2
 ### Header 3
 #### Header 4
 ##### Header 5
 ###### Header 6
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="links-and-email">Links and Email<a class="headerlink" href="#links-and-email" title="Permanent link">&para;</a></h3>
 <h4 id="inline">Inline<a class="headerlink" href="#inline" title="Permanent link">&para;</a></h4>
@@ -798,7 +811,14 @@ on it's own line elsewhere:<br />
 </li>
 </ul>
 <p>Here is the code:</p>
-<div class="codehilite"><pre><span></span>* Lists must be preceded by a blank line (or block element)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* Lists must be preceded by a blank line (or block element)
 * Unordered lists start each item with a `*`
 - `-` works too
     * Indent a level to make a nested list
@@ -807,7 +827,7 @@ on it's own line elsewhere:<br />
         42. It doesn&#39;t matter what number you use, I will render them sequentially
         1. So you might want to start each line with `1.` and let me sort it out
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="block-quote">Block Quote<a class="headerlink" href="#block-quote" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -829,7 +849,18 @@ Looks kinda ugly though.</p>
 </ul>
 </blockquote>
 <p>Here is the code:</p>
-<div class="codehilite"><pre><span></span>&gt; Angle brackets `&gt;` are used for block quotes.  
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&gt; Angle brackets `&gt;` are used for block quotes.  
 Technically not every line needs to start with a `&gt;` as long as
 there are no empty lines between paragraphs.  
 &gt; Looks kinda ugly though.
@@ -842,7 +873,7 @@ there are no empty lines between paragraphs.
 &gt; * [Links][arbitrary_id]
 &gt; * Etc.
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="inline-code">Inline Code<a class="headerlink" href="#inline-code" title="Permanent link">&para;</a></h3>
 <p><code>Inline code</code> is indicated by surrounding it with backticks:<br />
@@ -851,12 +882,15 @@ there are no empty lines between paragraphs.
 <code>``Code with `backticks` ``</code>  (mind the spaces preceding the final set of backticks)</p>
 <h3 id="block-code">Block Code<a class="headerlink" href="#block-code" title="Permanent link">&para;</a></h3>
 <p>If you indent at least four spaces or one tab, I'll display a code block.</p>
-<div class="codehilite"><pre><span></span>print(&#39;This is a code block&#39;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>print(&#39;This is a code block&#39;)
 print(&#39;The block must be preceded by a blank line&#39;)
 print(&#39;Then indent at least 4 spaces or 1 tab&#39;)
     print(&#39;Nesting does nothing. Your code is displayed Literally&#39;)
 </pre></div>
-
+</td></tr></table>
 
 <p>I also know how to do something called <a href="#fenced-code-block">Fenced Code Blocks</a> which I will tell you about later.</p>
 <h3 id="horizontal-rules">Horizontal Rules<a class="headerlink" href="#horizontal-rules" title="Permanent link">&para;</a></h3>
@@ -918,14 +952,14 @@ print(&#39;Then indent at least 4 spaces or 1 tab&#39;)
 <p>The left- and right-most pipes (<code>|</code>) are only aesthetic, and can be omitted. The spaces don’t matter, either. Alignment depends solely on <code>:</code> marks.</p>
 <h4 id="fenced-code-block"><a name="fenced-code-block">Fenced Code Block</a><a class="headerlink" href="#fenced-code-block" title="Permanent link">&para;</a></h4>
 <p>This is a fenced code block:</p>
-<div class="codehilite"><pre><span></span>print(&#39;Hello world!&#39;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>print(&#39;Hello world!&#39;)
 </pre></div>
-
+</td></tr></table>
 
 <p>You can also use waves (<code>~</code>) instead of back ticks (<code>`</code>):</p>
-<div class="codehilite"><pre><span></span>print(&#39;Hello world!&#39;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>print(&#39;Hello world!&#39;)
 </pre></div>
-
+</td></tr></table>
 
 <p>You can add an optional language ID at the end of the first line. The language ID will only be used to highlight the code inside if you tick the <strong><em>Enable highlighting in code blocks</em></strong> option. This is what happens if you enable it:</p>
 <p><img alt="Syntax highlighting example" src="http://d.pr/i/9HM6+" /></p>
@@ -1014,12 +1048,15 @@ print(&#39;Then indent at least 4 spaces or 1 tab&#39;)
 </ol>
 <h3 id="jekyll-front-matter">Jekyll front-matter<a class="headerlink" href="#jekyll-front-matter" title="Permanent link">&para;</a></h3>
 <p>If you like, I can display Jekyll front-matter in a nice table. Just make sure you put the front-matter at the very beginning of the file, and fence it with <code>---</code>. For example:</p>
-<div class="codehilite"><pre><span></span>---
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>---
 title: &quot;Macdown is my friend&quot;
 date: 2014-06-06 20:00:00
 ---
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="render-newline-literally">Render newline literally<a class="headerlink" href="#render-newline-literally" title="Permanent link">&para;</a></h3>
 <p>Normally I require you to put two spaces and a newline (aka return) at the end of a line in order to create a line break. If you like, I can render a newline any time you end a line with a newline. However, if you enable this, markdown that looks lovely when I render it might look pretty funky when you let some <em>other</em> program render it.</p>

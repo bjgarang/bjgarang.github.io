@@ -433,10 +433,11 @@
                 <h2 id="_1">字符串基本操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>所有标准的序列操作（索引、分片、乘法、判断成员资格、求长度、取最小值和最大值）对字符串同样适用。但是字符串是不可变的，因此对字符串进行分片赋值等操作是不合法的。</p>
 <h2 id="_2">字符串格式化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> plus </span><span class="si">%s</span><span class="s1"> equals </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> plus </span><span class="si">%s</span><span class="s1"> equals </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="s1">&#39;1 plus 1 equals 2&#39;</span>
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="_3">基本转换说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
@@ -453,11 +454,13 @@
 <p><strong>点<code>.</code>后跟精度值</strong>（可选）：如果转换的是实数，精度值就表示出现在小数点后的位数。如果转换的是字符串，那么该数字就表示最大字段宽度。如果是<code>*</code>，那么精度将会从元组中读出。  </p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;Pi with three decimals: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="s1">&#39;</span>
 <span class="n">Pi</span> <span class="k">with</span> <span class="n">three</span> <span class="n">decimals</span><span class="p">:</span> <span class="mf">3.142</span><span class="s1">&#39;  </span>
 </pre></div>
-
+</td></tr></table>
 
 <ul>
 <li><strong>转换类型：</strong>参见下表</li>
@@ -526,8 +529,90 @@
 </table>
 <h2 id="_4">字符串方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>find:在较长的字符串中查找子串，它返回子串所在位置的最左端索引，如果没有找到则返回<code>-1</code></li>
-<li></li>
+<li>
+<p>find:在较长的字符串中查找子串，它返回子串所在位置的最左端索引，如果没有找到则返回<code>-1</code></p>
+</li>
+<li>
+<p>join:它是split方法的逆方法，用来连接序列中的元素</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;+&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">sequence</span> <span class="n">item</span> <span class="mi">0</span><span class="p">:</span> <span class="n">expected</span> <span class="n">string</span><span class="p">,</span> <span class="nb">int</span> <span class="n">found</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;+&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="s1">&#39;1+2+3+4+5&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>可以看到，需要被连接的序列元素都必须是字符串。</p>
+<ul>
+<li>lower:返回字符串的小写字母版</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;THAKN YOU&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">&#39;thakn you&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>replace：返回某字符串的所有匹配项均被替换之后得到的字符串</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;This is a test&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;eez&#39;</span><span class="p">)</span>
+<span class="s1">&#39;Theez eez a test&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>split：它是join的逆方法，用来将字符串分割成序列</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;/usr/bin/env&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;usr&#39;</span><span class="p">,</span> <span class="s1">&#39;bin&#39;</span><span class="p">,</span> <span class="s1">&#39;env&#39;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>strip：返回去除两侧（不包括内部）空格的字符串：</li>
+</ul>
+<p>它和lower方法一起使用的话就可以很方便的对比输入和存储的值。假设用户在输入名字时无意中在名字后面加上了空格：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gumby&#39;</span><span class="p">,</span><span class="s1">&#39;smith&#39;</span><span class="p">,</span><span class="s1">&#39;jones&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Gumby &#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span><span class="k">print</span> <span class="s1">&#39;Found it!&#39;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span><span class="k">print</span> <span class="s1">&#39;Found it!&#39;</span>
+<span class="o">...</span>
+<span class="n">Found</span> <span class="n">it</span><span class="err">!</span>
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>也可以指定需要去除的字符：str.strip('需要去除的字符')</p>
+</blockquote>
+<ul>
+<li>translate：和replace方法一样，可以替换字符串中的某些部分，但是和前者不通的是，translate方法只处理单个字符。它的优势在于可以同时进行多个替换，有些时候比replace效率高得多。</li>
 </ul>
                 
                   
