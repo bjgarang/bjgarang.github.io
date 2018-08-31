@@ -280,6 +280,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../字典/" title="字典" class="md-nav__link">
+      字典
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -335,6 +347,61 @@
   <a href="#_4" title="字符串方法" class="md-nav__link">
     字符串方法
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" title="find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" title="join" class="md-nav__link">
+    join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower" title="lower" class="md-nav__link">
+    lower
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" title="replace" class="md-nav__link">
+    replace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" title="split" class="md-nav__link">
+    split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip" title="strip" class="md-nav__link">
+    strip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translate" title="translate" class="md-nav__link">
+    translate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -408,6 +475,61 @@
   <a href="#_4" title="字符串方法" class="md-nav__link">
     字符串方法
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" title="find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" title="join" class="md-nav__link">
+    join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower" title="lower" class="md-nav__link">
+    lower
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" title="replace" class="md-nav__link">
+    replace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" title="split" class="md-nav__link">
+    split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip" title="strip" class="md-nav__link">
+    strip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translate" title="translate" class="md-nav__link">
+    translate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -528,14 +650,10 @@
 </tbody>
 </table>
 <h2 id="_4">字符串方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>find:在较长的字符串中查找子串，它返回子串所在位置的最左端索引，如果没有找到则返回<code>-1</code></p>
-</li>
-<li>
-<p>join:它是split方法的逆方法，用来连接序列中的元素</p>
-</li>
-</ul>
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<p>在较长的字符串中查找子串，它返回子串所在位置的最左端索引，如果没有找到则返回<code>-1</code></p>
+<h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<p>它是split方法的逆方法，用来连接序列中的元素</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -561,36 +679,32 @@
 </td></tr></table>
 
 <p>可以看到，需要被连接的序列元素都必须是字符串。</p>
-<ul>
-<li>lower:返回字符串的小写字母版</li>
-</ul>
+<h3 id="lower">lower<a class="headerlink" href="#lower" title="Permanent link">&para;</a></h3>
+<p>返回字符串的小写字母版</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;THAKN YOU&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="s1">&#39;thakn you&#39;</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;THANK YOU&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">&#39;thank you&#39;</span>
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>replace：返回某字符串的所有匹配项均被替换之后得到的字符串</li>
-</ul>
+<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
+<p>返回某字符串的所有匹配项均被替换之后得到的字符串</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;This is a test&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;eez&#39;</span><span class="p">)</span>
 <span class="s1">&#39;Theez eez a test&#39;</span>
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>split：它是join的逆方法，用来将字符串分割成序列</li>
-</ul>
+<h3 id="split">split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<p>它是join的逆方法，用来将字符串分割成序列</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;/usr/bin/env&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;usr&#39;</span><span class="p">,</span> <span class="s1">&#39;bin&#39;</span><span class="p">,</span> <span class="s1">&#39;env&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>strip：返回去除两侧（不包括内部）空格的字符串：</li>
-</ul>
+<h3 id="strip">strip<a class="headerlink" href="#strip" title="Permanent link">&para;</a></h3>
+<p>返回去除两侧（不包括内部）空格的字符串：</p>
 <p>它和lower方法一起使用的话就可以很方便的对比输入和存储的值。假设用户在输入名字时无意中在名字后面加上了空格：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -611,9 +725,8 @@
 <blockquote>
 <p>也可以指定需要去除的字符：str.strip('需要去除的字符')</p>
 </blockquote>
-<ul>
-<li>translate：和replace方法一样，可以替换字符串中的某些部分，但是和前者不通的是，translate方法只处理单个字符。它的优势在于可以同时进行多个替换，有些时候比replace效率高得多。</li>
-</ul>
+<h3 id="translate">translate<a class="headerlink" href="#translate" title="Permanent link">&para;</a></h3>
+<p>和replace方法一样，可以替换字符串中的某些部分，但是和前者不通的是，translate方法只处理单个字符。它的优势在于可以同时进行多个替换，有些时候比replace效率高得多。</p>
                 
                   
                 
@@ -634,7 +747,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../基础知识/" title="基础知识" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../字典/" title="字典" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -643,7 +756,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                基础知识
+                字典
               </span>
             </div>
           </a>

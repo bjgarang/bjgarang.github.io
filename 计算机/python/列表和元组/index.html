@@ -375,6 +375,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../字典/" title="字典" class="md-nav__link">
+      字典
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../字符串/" title="字符串" class="md-nav__link">
       字符串
     </a>
@@ -523,15 +535,73 @@
 </ul>
 <h3 id="_4">列表方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>append（末尾追加）</li>
+<li>append（末尾追加）<code>修改原列表，返回none</code></li>
 <li>count（统计某个元素值出现的次数）</li>
-<li>extend（在一个列表的末尾追加另外一个列表中的所有元素）</li>
+<li>extend（在一个列表的末尾追加另外一个列表中的所有元素）<code>修改原列表，返回none</code></li>
 <li>index（找出某个元素在列表中第一个匹配项的索引位置）</li>
-<li>insert（将对象插入到列表中的某个索引前）</li>
-<li>pop（移除列表中的一个元素，默认是最后一个，并且返回该元素的值）</li>
-<li>remove（移除某个值在列表中的第一个匹配项）</li>
-<li>reverse（将列表中的元素反向存放）</li>
+<li>insert（将对象插入到列表中的某个索引前）<code>修改原列表，返回none</code></li>
+<li>pop（移除列表中的一个元素，默认是最后一个，并且返回该元素的值）<code>修改原列表，返回被移除的值</code></li>
+<li>remove（移除某个值在列表中的第一个匹配项）<code>修改原列表，返回none</code></li>
+<li>reverse（将列表中的元素反向存放）<code>修改原列表，返回none</code></li>
 <li>sort（对列表中的元素进行排序）</li>
+</ul>
+<p>sort方法用于在原位置对列表进行排序。在“原位置排序”意味着改变原来的列表，从而让其中的元素能按一定的顺序排列，而不是简单地返回一个已排序的列表副本。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<p>当用户需要一个排好序的列表副本，同时又保留原有列表不变的时候，不能使用下面的做法：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">y</span>
+<span class="bp">None</span>
+</pre></div>
+</td></tr></table>
+
+<p>因为sort方法修改了<code>x</code>却返回了空值，那么最后得到的是已排序的x以及值为<code>None</code>的<code>y</code>。实现这个功能的正确方法是，首先把<code>x</code>的副本复制给<code>y</code>，然后对<code>y</code>进行排序，如下所示：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="p">[:]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<p>再次调用<code>x[:]</code>得到的是包含了<code>x</code>所有元素的分片，这是一种很有效率的复制整个列表的方法。只是简单地把<code>x</code>赋值给<code>y</code>是没用的，因为这样做就让<code>x</code>和<code>y</code>都执行同一个列表了。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span><span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
 <li>高级排序（使用cmp、key、reverse三个参数）</li>
 </ul>
 <h3 id="_5">元组：不可修改的序列<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
