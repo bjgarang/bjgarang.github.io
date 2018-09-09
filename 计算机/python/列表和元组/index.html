@@ -256,6 +256,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../matplotlib中文/" title="matplotlib中文乱码问题" class="md-nav__link">
+      matplotlib中文乱码问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -545,8 +557,8 @@
 <li>reverse（将列表中的元素反向存放）<code>修改原列表，返回none</code></li>
 <li>sort（对列表中的元素进行排序）</li>
 </ul>
-<p>sort方法用于在原位置对列表进行排序。在“原位置排序”意味着改变原来的列表，从而让其中的元素能按一定的顺序排列，而不是简单地返回一个已排序的列表副本。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p>sort方法用于在原位置对列表进行排序。在“原位置排序”意味着改变原来的列表，从而让其中的元素能按一定的顺序排列，而不是简单地返回一个已排序的列表副本。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -555,9 +567,8 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
-<p>当用户需要一个排好序的列表副本，同时又保留原有列表不变的时候，不能使用下面的做法：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+当用户需要一个排好序的列表副本，同时又保留原有列表不变的时候，不能使用下面的做法：
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -566,9 +577,8 @@
 <span class="bp">None</span>
 </pre></div>
 </td></tr></table>
-
-<p>因为sort方法修改了<code>x</code>却返回了空值，那么最后得到的是已排序的x以及值为<code>None</code>的<code>y</code>。实现这个功能的正确方法是，首先把<code>x</code>的副本复制给<code>y</code>，然后对<code>y</code>进行排序，如下所示：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+因为sort方法修改了<code>x</code>却返回了空值，那么最后得到的是已排序的x以及值为<code>None</code>的<code>y</code>。实现这个功能的正确方法是，首先把<code>x</code>的副本复制给<code>y</code>，然后对<code>y</code>进行排序，如下所示：
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -583,9 +593,8 @@
 <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
-<p>再次调用<code>x[:]</code>得到的是包含了<code>x</code>所有元素的分片，这是一种很有效率的复制整个列表的方法。只是简单地把<code>x</code>赋值给<code>y</code>是没用的，因为这样做就让<code>x</code>和<code>y</code>都执行同一个列表了。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+再次调用<code>x[:]</code>得到的是包含了<code>x</code>所有元素的分片，这是一种很有效率的复制整个列表的方法。只是简单地把<code>x</code>赋值给<code>y</code>是没用的，因为这样做就让<code>x</code>和<code>y</code>都执行同一个列表了。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -600,10 +609,7 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
-<ul>
-<li>高级排序（使用cmp、key、reverse三个参数）</li>
-</ul>
+* 高级排序（使用cmp、key、reverse三个参数）</p>
 <h3 id="_5">元组：不可修改的序列<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>tuple函数（将序列转化为元组）</li>
@@ -629,7 +635,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../../生活/life/" title="首页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../matplotlib中文/" title="matplotlib中文乱码问题" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -638,7 +644,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                首页
+                matplotlib中文乱码问题
               </span>
             </div>
           </a>
