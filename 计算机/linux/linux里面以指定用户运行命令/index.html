@@ -36,7 +36,7 @@
     
     
       
-        <title>sfijsd - My Docs</title>
+        <title>linux里面以指定用户运行命令</title>
       
     
     
@@ -71,7 +71,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#sfijsd" tabindex="1" class="md-skip">
+      <a href="../../../#chroot" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -97,7 +97,7 @@
                 My Docs
               </span>
               <span class="md-header-nav__topic">
-                sfijsd
+                linux里面以指定用户运行命令
               </span>
             
           
@@ -270,7 +270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../elasticsearch/" title="ELK+filebeat+kafka日志分析系统" class="md-nav__link">
+    <a href="../ELK/" title="ELK+filebeat+kafka日志分析系统" class="md-nav__link">
       ELK+filebeat+kafka日志分析系统
     </a>
   </li>
@@ -287,30 +287,33 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        sfijsd
+        linux里面以指定用户运行命令
       </label>
     
-    <a href="./" title="sfijsd" class="md-nav__link md-nav__link--active">
-      sfijsd
+    <a href="./" title="linux里面以指定用户运行命令" class="md-nav__link md-nav__link--active">
+      linux里面以指定用户运行命令
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sirgj" title="sirgj" class="md-nav__link">
-    sirgj
+  <a href="#chroot" title="一、chroot方式" class="md-nav__link">
+    一、chroot方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemon" title="二、daemon函数形式" class="md-nav__link">
+    二、daemon函数形式
   </a>
   
 </li>
@@ -506,15 +509,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sirgj" title="sirgj" class="md-nav__link">
-    sirgj
+  <a href="#chroot" title="一、chroot方式" class="md-nav__link">
+    一、chroot方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemon" title="二、daemon函数形式" class="md-nav__link">
+    二、daemon函数形式
   </a>
   
 </li>
@@ -536,13 +544,88 @@
               
                 
                 
-                <h1 id="sfijsd">sfijsd<a class="headerlink" href="#sfijsd" title="Permanent link">&para;</a></h1>
-<h2 id="sirgj">sirgj<a class="headerlink" href="#sirgj" title="Permanent link">&para;</a></h2>
-<p>lsidjgiesj</p>
-<p>liivud</p>
-<p>ksd</p>
-<p><strong>juf</strong></p>
-<p>iduvhs</p>
+                  <h1>linux里面以指定用户运行命令</h1>
+                
+                <h2 id="chroot">一、chroot方式<a class="headerlink" href="#chroot" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># chroot --userspec &quot;nginx:nginx&quot; &quot;/&quot; sh -c &quot;whoami&quot;</span>
+nginx
+<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># chroot --userspec &quot;kibana:kibana&quot; &quot;/&quot; sh -c &quot;whoami&quot;</span>
+kibana
+</pre></div>
+</td></tr></table>
+
+<p>以kibana用户启动kibana示例：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>chroot --userspec <span class="s2">&quot;kibana:kibana&quot;</span> <span class="s2">&quot;/&quot;</span> sh -c <span class="s2">&quot;/usr/share/kibana/bin/kibana -c /etc/kibana/kibana.yml&quot;</span> &gt;&gt; /var/log/kibana/kibana.stdout <span class="m">2</span>&gt;&gt; /var/log/kibana/kibana.stderr <span class="p">&amp;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="c1"># Run the program!</span>
+
+  chroot --userspec <span class="s2">&quot;</span><span class="nv">$user</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="nv">$group</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$chroot</span><span class="s2">&quot;</span> sh -c <span class="s2">&quot;</span>
+
+<span class="s2">    cd \&quot;</span><span class="nv">$chdir</span><span class="s2">\&quot;</span>
+<span class="s2">    exec \&quot;</span><span class="nv">$program</span><span class="s2">\&quot; </span><span class="nv">$args</span><span class="s2"></span>
+<span class="s2">  &quot;</span> &gt;&gt; /var/log/kibana/kibana.stdout <span class="m">2</span>&gt;&gt; /var/log/kibana/kibana.stderr <span class="p">&amp;</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="chroot" src="../../../img/chroot.png" /></p>
+<h2 id="daemon">二、daemon函数形式<a class="headerlink" href="#daemon" title="Permanent link">&para;</a></h2>
+<p>参考<code>https://stackoverflow.com/questions/17956151/how-to-run-a-command-as-a-specific-user-in-an-init-script</code></p>
+<blockquote>
+<p>On RHEL systems, the <strong>/etc/rc.d/init.d/functions</strong> script is intended to provide similar to what you want. <strong>If you source that at the top of your init script, all of it's functions become available</strong>.</p>
+<p>The specific function provided to help with this is <code>daemon</code>. If you are intending to use it to start a daemon-like program, a simple usage would be:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>daemon --user<span class="o">=</span>username <span class="nb">command</span>
+</pre></div>
+</td></tr></table>
+
+<p>If that is too heavy-handed for what you need, there is <code>runuser</code> (see <code>man runuser</code> for full info; some versions may need <code>-u</code> prior to the username):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/sbin/runuser username -s /bin/bash -c <span class="s2">&quot;command(s) to run as user username&quot;</span>
+</pre></div>
+</td></tr></table>
+
+</blockquote>
+<p>elasticsearch启动脚本示例：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Source function library.</span>
+<span class="c1">#</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/rc.d/init.d/functions <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    . /etc/rc.d/init.d/functions
+<span class="k">fi</span>
+
+<span class="nb">cd</span> <span class="nv">$ES_HOME</span>
+<span class="nb">echo</span> -n $<span class="s2">&quot;Starting </span><span class="nv">$prog</span><span class="s2">: &quot;</span>
+<span class="c1"># if not running, start it up here, usually something like &quot;daemon $exec&quot;</span>
+daemon --user elasticsearch --pidfile <span class="nv">$pidfile</span> <span class="nv">$exec</span> -p <span class="nv">$pidfile</span> -d
+<span class="nv">retval</span><span class="o">=</span><span class="nv">$?</span>
+<span class="nb">echo</span>
+<span class="o">[</span> <span class="nv">$retval</span> -eq <span class="m">0</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> touch <span class="nv">$lockfile</span>
+<span class="k">return</span> <span class="nv">$retval</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -563,7 +646,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../elasticsearch/" title="ELK+filebeat+kafka日志分析系统" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ELK/" title="ELK+filebeat+kafka日志分析系统" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
