@@ -1765,6 +1765,9 @@ ln -s elasticsearch-6.5.1 elasticsearch
 </td></tr></table>
 
 <h3 id="47elasticsearch-head">4.7、使用elasticsearch-head插件<a class="headerlink" href="#47elasticsearch-head" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>因为head插件可以对数据进行增删查改，所以生产环境尽量不要使用，最少要限制ip地址，尽量不要使用。</p>
+</blockquote>
 <h4 id="471node">4.7.1、部署node环境<a class="headerlink" href="#471node" title="Permanent link">&para;</a></h4>
 <p>(1)、下载node包</p>
 <blockquote>
@@ -2165,7 +2168,7 @@ root      <span class="m">6580</span>  <span class="m">8</span>.7  <span class="
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /usr/local/
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.5.1-linux-x86_64.tar.gz
 tar -zxf filebeat-6.5.1-linux-x86_64.tar.gz
-ln -s filebeat-6.5.1 filebeat
+ln -s filebeat-6.5.1-linux-x86_64 filebeat
 </pre></div>
 </td></tr></table>
 
@@ -2209,6 +2212,9 @@ ln -s logstash-6.5.1 logstash
 
 <h3 id="92filebeat">9.2、配置filebeat<a class="headerlink" href="#92filebeat" title="Permanent link">&para;</a></h3>
 <h4 id="921filebeatyml">9.2.1、filebeat.yml<a class="headerlink" href="#921filebeatyml" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>安装filebeat后，自带的filebeat.yml文件中<code>output.elasticsearch</code>默认是开启的，记得注释掉，然后再添加自己的output配置，否则启动filebeat的时候会遇到如下的报错：<code>Exiting: error unpacking config data: more than one namespace configured accessing 'output' (source:'filebeat.yml')</code></p>
+</blockquote>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
